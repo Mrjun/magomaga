@@ -1,0 +1,179 @@
+<!-- The Modal -->
+<div id="myModal" class="modal modal-open" close-model="true">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" close-model="true">&times;</span>
+    <div class="image-container">
+      <img src="https://cdn.shopify.com/s/files/1/0645/4355/5763/files/Frame_1.png?v=1704870849" 
+        alt="Popup Image" style="width: 100%;"
+      />
+    </div>
+    <div class="text-container">
+      <h2 class="text-container-title">Thanks for Sign Up!</h2>
+      <p class="text-container-subtitle">Join Launch Group to receive:</p>
+      <ul class="text-container-lists">
+        <li>Exclusive Super Early Bird Offer</li>
+        <li>Secret Product Info</li>
+        <li>Weekly Giveaways</li>
+      </ul>
+      <div class="box-src-button">
+        <a class="src-button" style="display:block;" href="https://m.me/148909841640703?ref=e3waQ1LCR" target="_blank">
+          I'm in
+          <!-- <button class="src-button" onclick="window.location.href='https://m.me/148909841640703?ref=e3waQ1LCR'" >I'm in</button> -->
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+//var modal = document.getElementById('myModal');
+//var span = document.getElementsByClassName('close')[0];
+
+// 当用户单击 <span> (x) 时，关闭模式
+// span.onclick = function() {
+//   modal.style.display = 'none';
+// }
+
+// 当用户单击模式之外的任何位置时，将其关闭
+// window.onclick = function(event) {
+//   if ( event.target.getAttribute("close-model") ) {
+//     modal.style.display = 'none';
+//   }
+// }
+
+//var modal = document.getElementById('myModal');var span = document.getElementsByClassName('close')[0];  给这两个元素加上一个close-model属性
+
+// 当用户单击模式之外的任何位置时，将其关闭
+window.onclick = function(event) {
+  if(document.querySelector("#myModal").getAttribute("close-model")=='true'){
+      console.log("关闭模态窗")
+      document.querySelectorAll(".modal").forEach(el=>el.classList.remove('modal-open'));
+      document.querySelectorAll(".modal").forEach(el=>el.classList.add('hidden-modal'));
+  }
+}
+</script>
+
+<style>
+/* The Modal (background) */
+.modal {
+  /* display: block;  */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+.modal-open{
+  display:block;
+}
+.hidden-modal{
+  display:none
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #4C2F1F;
+  margin: 10% auto; 
+  /* padding: 20px; */
+  border: 1px solid #888;
+  width: 50%; 
+  display: flex; /* Using flexbox for layout */
+  flex-direction: row; /* Default row layout */
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.image-container {
+  flex: 1; /* Take up equal amount of space as text-container */
+  display: flex;
+  justify-content: space-between; /* Center image in the space */
+  align-items: center; /* Center image vertically */
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.text-container {
+  flex: 1; /* Take up equal amount of space as image-container */
+  padding-left: 20px; /* Space between image and text */
+  color: #fff;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: start;
+}
+.text-container-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.text-container-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.text-container-lists{
+    margin: 0 15px;
+    display: grid;
+    justify-items: start;
+}
+
+.box-src-button {
+  margin: 2rem 1rem;
+}
+.src-button {
+  width: 10rem;
+  height: 3rem;
+  border-radius: 30px;
+  font-size: 30px;
+  background: #fff;
+  color: #000;
+}
+
+@media screen and (max-width: 1000px) {
+  .modal-content {
+    flex-direction: column; 
+  }
+  .image-container {
+    padding: 0; 
+    flex: none; 
+  }
+  .text-container {
+    padding: 10px;
+  }
+  
+  .text-container h2 {
+    font-size: 30px;
+  }
+  .text-container-subtitle {
+    font-size: 20px;
+  }
+  .modal-content {
+    width: 90%; 
+    /* margin-top: 50%;  */
+    /* margin-bottom: 50px;  */
+  }
+}
+</style>
+
